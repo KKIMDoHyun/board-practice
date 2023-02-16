@@ -1,12 +1,13 @@
 import React from "react";
+import { BrowserRouter } from "react-router-dom";
 
-import "./App.css";
+import { AppRoutes } from "./routes/AppRoutes";
 
 const App = () => {
     return (
-        <div className="App">
-            <span className="text-5xl">ㅎㅎ</span>
-        </div>
+        <BrowserRouter>
+            <AppRoutes />
+        </BrowserRouter>
     );
 };
 
