@@ -4,5 +4,5 @@ import { Routes } from "..";
 
 export const AppRoutes = () => {
     const isAuthorized = false;
-    return <div className="flex bg-black">{Routes(isAuthorized)}</div>;
+    return <div className="flex">{Routes(isAuthorized)}</div>;
 };
