@@ -1,13 +1,15 @@
 import { LoginFormInput } from "@/types";
 import React from "react";
 import { FormProvider, useForm } from "react-hook-form";
+import { useNavigate } from "react-router";
 
 import { IdInput } from "./IdInput";
 import { InputValidation } from "./InputValidation";
 import { LoginButton } from "./LoginButton";
 import { PwInput } from "./PwInput";
 
-export const Login = () => {
+export const SignIn = () => {
+    const navigate = useNavigate();
     const methods = useForm<LoginFormInput>({
         defaultValues: {
             id: "",
@@ -27,8 +29,17 @@ export const Login = () => {
                     </FormProvider>
                 </div>
                 <div>
-                    <span>회원이 아니신가요? | </span>
-                    <span>회원가입</span>
+                    <span className="text-xs font-bold">
+                        회원이 아니신가요? |{" "}
+                    </span>
+                    <span
+                        className="text-xs font-bold cursor-pointer"
+                        onClick={() => {
+                            navigate("/sign-up");
+                        }}
+                    >
+                        회원가입
+                    </span>
                 </div>
             </div>
         </div>
