@@ -1,4 +1,6 @@
+import { isAuthorizedAtom } from "@/stores";
 import { LoginFormInput } from "@/types";
+import { useAtom } from "jotai";
 import React from "react";
 import { FormProvider, useForm } from "react-hook-form";
 import { useNavigate } from "react-router";
@@ -9,7 +11,10 @@ import { LoginButton } from "./LoginButton";
 import { PwInput } from "./PwInput";
 
 export const SignIn = () => {
+    const [isAuthorized] = useAtom(isAuthorizedAtom);
+
     const navigate = useNavigate();
+    console.log(isAuthorized);
     const methods = useForm<LoginFormInput>({
         defaultValues: {
             id: "",

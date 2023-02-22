@@ -1,11 +1,19 @@
+import { isAuthorizedAtom } from "@/stores";
 import { LoginFormInput } from "@/types";
+import { useAtom } from "jotai";
 import React from "react";
 import { SubmitHandler, useFormContext } from "react-hook-form";
+import { useNavigate } from "react-router-dom";
 
 export const LoginButton = () => {
+    const navigate = useNavigate();
+    const [, setIsAuthorized] = useAtom(isAuthorizedAtom);
+
     const { handleSubmit } = useFormContext<LoginFormInput>();
     const onSubmit: SubmitHandler<LoginFormInput> = (data) => {
         console.log(data);
+        setIsAuthorized(true);
+        navigate("/");
     };
 
     return (

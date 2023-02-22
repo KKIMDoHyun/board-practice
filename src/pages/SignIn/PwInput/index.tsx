@@ -16,6 +16,7 @@ export const PwInput = () => {
                     onChange={(e) => {
                         onChange(e.target.value);
                     }}
+                    type="password"
                     onBlur={onBlur}
                     placeholder="비밀번호를 입력하세요."
                 />

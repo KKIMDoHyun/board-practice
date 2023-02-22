@@ -5,7 +5,7 @@ export const UnAuthorizedRoute = () => {
     const location = useLocation();
     return (
         <Navigate
-            to="/login"
+            to="/sign-in"
             state={{
                 prev: location.state,
                 location,
