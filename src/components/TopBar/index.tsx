@@ -1,11 +1,11 @@
-import { isAuthorizedAtom } from "@/stores";
+import { isAuthorizedAtom } from "@/stores/login";
 import { useAtom } from "jotai";
 import React from "react";
 
 export const TopBar = () => {
     const [isAuthorized, setIsAuthorized] = useAtom(isAuthorizedAtom);
     return (
-        <div className=" flex bg-slate-700 h-10 items-center justify-between pr-5 pl-5">
+        <div className=" flex bg-slate-700 h-10 items-center justify-between pr-5 pl-5 sticky top-0 w-full">
             <span className="text-white text-2xl">게시판</span>
             {isAuthorized && (
                 <span

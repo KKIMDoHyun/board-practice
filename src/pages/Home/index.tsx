@@ -1,4 +1,4 @@
-import { isAuthorizedAtom } from "@/stores";
+import { isAuthorizedAtom } from "@/stores/login";
 import { useAtomValue } from "jotai";
 import React from "react";
 

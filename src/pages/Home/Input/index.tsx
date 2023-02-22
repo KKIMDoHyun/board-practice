@@ -1,8 +1,11 @@
+import { boardAtom, uuid } from "@/stores/board";
+import { BoardType } from "@/types";
+import { useAtom } from "jotai";
 import React, { useState } from "react";
 
 export const Input = () => {
+    const [, setBoards] = useAtom(boardAtom);
     const [post, setPost] = useState<string>("");
-
     const handleTextArea = (e: React.ChangeEvent<HTMLTextAreaElement>) => {
         setPost(e.target.value);
     };
@@ -14,6 +17,14 @@ export const Input = () => {
             console.log("내용 없음");
         } else {
             console.log("게시글 추가");
+            const board: BoardType = {
+                id: uuid(),
+                createdAt: new Date().toISOString(),
+                updatedAt: null,
+                userId: "kdh5998",
+                content: post,
+            };
+            setBoards((prev) => [board, ...prev]);
             setPost("");
         }
     };
