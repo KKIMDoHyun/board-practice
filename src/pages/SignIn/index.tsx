@@ -22,7 +22,7 @@ export const SignIn = () => {
         },
     });
     return (
-        <div className="flex items-center justify-center w-screen h-screen flex-col">
+        <div className="flex items-center justify-center w-screen h-full flex-col">
             <div className="flex w-96 h-2/5 border-2 border-black flex-col p-2 items-center justify-center gap-6">
                 <span className="text-5xl">로그인</span>
                 <div className="flex flex-col w-full">

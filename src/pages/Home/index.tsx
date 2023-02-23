@@ -9,7 +9,7 @@ export const Home = () => {
     const isAuthorized = useAtomValue(isAuthorizedAtom);
     console.log(isAuthorized);
     return (
-        <div className="flex justify-center items-center flex-col scroll-auto">
+        <div className="flex justify-center items-center flex-col scroll-auto w-full h-screen">
             <Input />
             <Board />
         </div>
