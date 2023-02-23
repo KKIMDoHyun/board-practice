@@ -6,7 +6,5 @@ export type LoginFormInput = {
 export type BoardType = {
     id: string;
     createdAt: string;
-    updatedAt: string | null;
-    userId: string;
     content: string;
 };

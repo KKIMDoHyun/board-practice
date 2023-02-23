@@ -7,7 +7,7 @@ export const Board = () => {
         data: boardList,
         isLoading,
         isSuccess,
-    } = useQuery({
+    } = useQuery<any>({
         queryKey: ["GET_BOARDS"],
         queryFn: () => getBoards(),
     });
