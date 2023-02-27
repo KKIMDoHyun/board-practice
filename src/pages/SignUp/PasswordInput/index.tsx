@@ -1,44 +1,48 @@
 import { SignUpFormType } from "@/types";
-import { EmailReg } from "@/utils/regExp";
+import { PasswordReg } from "@/utils/regExp";
 import React from "react";
 import { Controller, useFormContext } from "react-hook-form";
 
 import { InputCss } from "../commonCss";
 
-export const EmailInput = () => {
+export const PasswordInput = () => {
     const {
         control,
         formState: { errors, isSubmitted },
     } = useFormContext<SignUpFormType>();
+
     return (
         <div className="flex flex-col gap-1">
             <Controller
                 control={control}
-                name="email"
+                name="password"
                 render={({ field: { value, onChange } }) => (
                     <input
                         value={value}
                         onChange={(e) => {
                             onChange(e.target.value);
                         }}
-                        placeholder="email을 입력하세요."
-                        className={InputCss(isSubmitted, errors.email?.message)}
+                        placeholder="비밀번호를 입력하세요."
+                        className={InputCss(
+                            isSubmitted,
+                            errors.password?.message
+                        )}
                     />
                 )}
                 rules={{
                     required: {
                         value: true,
-                        message: "이메일을 입력하세요.",
+                        message: "비밀번호를 입력하세요.",
                     },
                     pattern: {
-                        value: EmailReg,
-                        message: "이메일 형식이 아닙니다",
+                        value: PasswordReg,
+                        message: "비밀번호 형식이 잘못되었습니다.",
                     },
                 }}
             />
-            {errors.email?.message && (
+            {errors.password?.message && (
                 <span className="text-xs text-red-600 font-bold">
-                    {errors.email.message}
+                    {errors.password.message}
                 </span>
             )}
         </div>

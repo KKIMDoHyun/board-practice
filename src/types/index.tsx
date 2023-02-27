@@ -1,15 +1,15 @@
 export type LoginFormInput = {
     id: string;
-    pw: string;
+    password: string;
 };
 
 export type SignUpFormType = {
     email: string;
-    pw: string;
+    password: string;
     rePw: string;
     name: string;
-    phoneNumber: string;
-    gender: "MALE" | "FEMALE" | "UNKNOWN";
+    // phoneNumber: string;
+    // gender: "MALE" | "FEMALE" | "UNKNOWN";
 };
 
 export type BoardType = {

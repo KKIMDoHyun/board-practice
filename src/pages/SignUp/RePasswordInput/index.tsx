@@ -1,44 +1,40 @@
 import { SignUpFormType } from "@/types";
-import { EmailReg } from "@/utils/regExp";
 import React from "react";
 import { Controller, useFormContext } from "react-hook-form";
 
-import { InputCss } from "../commonCss";
-
-export const EmailInput = () => {
+export const RePasswordInput = () => {
     const {
         control,
-        formState: { errors, isSubmitted },
+        formState: { errors },
     } = useFormContext<SignUpFormType>();
     return (
         <div className="flex flex-col gap-1">
             <Controller
                 control={control}
-                name="email"
-                render={({ field: { value, onChange } }) => (
+                name="rePw"
+                render={({ field: { value, onChange, onBlur } }) => (
                     <input
                         value={value}
                         onChange={(e) => {
                             onChange(e.target.value);
                         }}
-                        placeholder="email을 입력하세요."
-                        className={InputCss(isSubmitted, errors.email?.message)}
+                        onBlur={onBlur}
+                        placeholder="비밀번호를 재입력하세요."
+                        className="h-10 border-2 border-black"
                     />
                 )}
                 rules={{
                     required: {
                         value: true,
-                        message: "이메일을 입력하세요.",
+                        message: "비밀번호를 재입력하세요.",
                     },
-                    pattern: {
-                        value: EmailReg,
-                        message: "이메일 형식이 아닙니다",
-                    },
+                    validate: (value, formValue) =>
+                        value === formValue.password || "비밀번호와 다릅니다.",
                 }}
             />
-            {errors.email?.message && (
+            {errors.rePw?.message && (
                 <span className="text-xs text-red-600 font-bold">
-                    {errors.email.message}
+                    {errors.rePw.message}
                 </span>
             )}
         </div>

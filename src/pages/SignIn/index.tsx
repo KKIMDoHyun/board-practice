@@ -18,7 +18,7 @@ export const SignIn = () => {
     const methods = useForm<LoginFormInput>({
         defaultValues: {
             id: "",
-            pw: "",
+            password: "",
         },
     });
     return (

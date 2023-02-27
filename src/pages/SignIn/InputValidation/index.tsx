@@ -8,7 +8,7 @@ export const InputValidation = () => {
     } = useFormContext<LoginFormInput>();
     const errorList: string[] = [];
     if (errors.id?.message) errorList.push(errors.id.message);
-    if (errors.pw?.message) errorList.push(errors.pw.message);
+    if (errors.password?.message) errorList.push(errors.password.message);
     return (
         <div className="flex mb-2">
             <span className="text-xs text-red-500 font-bold">
