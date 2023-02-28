@@ -5,7 +5,7 @@ import React from "react";
 import { FormProvider, useForm } from "react-hook-form";
 import { useNavigate } from "react-router";
 
-import { IdInput } from "./IdInput";
+import { EmailInput } from "./EmailInput";
 import { InputValidation } from "./InputValidation";
 import { LoginButton } from "./LoginButton";
 import { PwInput } from "./PwInput";
@@ -17,7 +17,7 @@ export const SignIn = () => {
     console.log(isAuthorized);
     const methods = useForm<LoginFormInput>({
         defaultValues: {
-            id: "",
+            email: "",
             password: "",
         },
     });
@@ -27,7 +27,7 @@ export const SignIn = () => {
                 <span className="text-5xl">로그인</span>
                 <div className="flex flex-col w-full">
                     <FormProvider {...methods}>
-                        <IdInput />
+                        <EmailInput />
                         <PwInput />
                         <InputValidation />
                         <LoginButton />

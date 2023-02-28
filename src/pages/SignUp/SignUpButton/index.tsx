@@ -18,11 +18,12 @@ export const SignUpButton = () => {
     const signUp = async (payload: SupabaseSignUpPayload) => {
         try {
             console.log("DDD", payload);
-            const { error } = await supabase.auth.signUp(payload);
+            const { error, data } = await supabase.auth.signUp(payload);
             if (error) {
                 console.log(error);
             } else {
                 console.log("성공");
+                console.log(data);
                 navigate("/sign-in");
             }
         } catch (err) {

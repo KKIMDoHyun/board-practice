@@ -12,7 +12,8 @@ export const PasswordInput = () => {
     } = useFormContext<SignUpFormType>();
 
     return (
-        <div className="flex flex-col gap-1">
+        <div className="flex flex-col">
+            <span className="text-sm font-bold mb-1">비밀번호</span>
             <Controller
                 control={control}
                 name="password"
@@ -22,6 +23,7 @@ export const PasswordInput = () => {
                         onChange={(e) => {
                             onChange(e.target.value);
                         }}
+                        type="password"
                         placeholder="비밀번호를 입력하세요."
                         className={InputCss(
                             isSubmitted,
@@ -32,16 +34,16 @@ export const PasswordInput = () => {
                 rules={{
                     required: {
                         value: true,
-                        message: "비밀번호를 입력하세요.",
+                        message: "*비밀번호를 입력하세요.",
                     },
                     pattern: {
                         value: PasswordReg,
-                        message: "비밀번호 형식이 잘못되었습니다.",
+                        message: "*비밀번호 형식이 잘못되었습니다.",
                     },
                 }}
             />
             {errors.password?.message && (
-                <span className="text-xs text-red-600 font-bold">
+                <span className="text-xs text-red-600 font-bold mt-1">
                     {errors.password.message}
                 </span>
             )}

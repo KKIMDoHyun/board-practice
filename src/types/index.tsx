@@ -1,13 +1,13 @@
 export type LoginFormInput = {
-    id: string;
+    email: string;
     password: string;
 };
 
 export type SignUpFormType = {
     email: string;
     password: string;
-    rePw: string;
-    name: string;
+    rePassword: string;
+    // name: string;
     // phoneNumber: string;
     // gender: "MALE" | "FEMALE" | "UNKNOWN";
 };
