@@ -1,4 +1,4 @@
-import { isAuthorizedAtom } from "@/stores/login";
+import { isAuthorizedAtom } from "@/stores/auth";
 import { useAtomValue } from "jotai";
 import { redirect } from "react-router-dom";
 

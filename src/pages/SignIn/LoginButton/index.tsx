@@ -1,4 +1,4 @@
-import { isAuthorizedAtom } from "@/stores/login";
+import { isAuthorizedAtom } from "@/stores/auth";
 import { LoginFormInput } from "@/types";
 import { supabase } from "@/utils/supabase";
 import { useAtom } from "jotai";

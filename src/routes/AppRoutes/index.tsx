@@ -1,5 +1,6 @@
 import { TopBar } from "@/components/TopBar";
-import { isAuthorizedAtom } from "@/stores/login";
+import { CompleteModal } from "@/pages/SignUp/CompleteModal";
+import { isAuthorizedAtom } from "@/stores/auth";
 import { useAtomValue } from "jotai";
 import React from "react";
 
@@ -10,6 +11,7 @@ export const AppRoutes = () => {
     return (
         <div className="flex flex-col bg-slate-300 h-screen">
             <TopBar />
+            <CompleteModal />
             {Routes(isAuthorized)}
         </div>
     );
